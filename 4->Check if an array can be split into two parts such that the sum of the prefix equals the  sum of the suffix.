@@ -1,0 +1,33 @@
+4-> Check if an array can be split into two parts such that the sum of the prefix equals the 
+sum of the suffix.
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int issplit(vector<int> arr,int n){
+    int totalsum=0;
+    for(int i=0;i<n;i++){
+        totalsum+=arr[i];
+    }
+    int prefixsum=0;
+    for(int i=0;i<n-1;i++){
+        prefixsum+=arr[i];
+        int suffixsum=totalsum-prefixsum;
+        if(prefixsum==suffixsum){
+            return 1;
+        }
+    }
+    return 0;
+}
+int main(){
+    vector<int> arr={1,1,1,3};
+    int n=arr.size();
+    int ans=issplit(arr,n);
+    if(ans==1){
+        cout<<"Array can be split into two parts of equal sum."<<endl;
+    }
+    else{
+        cout<<"Array can not be split. "<<endl;
+    }
+
+}
