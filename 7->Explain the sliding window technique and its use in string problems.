@@ -1,0 +1,32 @@
+7->Explain the sliding window technique and its use in string problems. 
+
+The Sliding Window Technique is a method used to reduce the time complexity of problems that involve 
+checking all contiguous subarrays or substrings in a given array or string. It is mainly used to solve 
+problems efficiently that would otherwise require nested loops.
+
+CONCEPT:
+
+->In this technique, we use a window (a range of elements) which moves over the data structure, either of a 
+->fixed size or a dynamic size, depending on the problem.
+->The window is defined using two pointers (usually start and end).
+->We expand or shrink the window based on the conditions given in the problem.
+
+TYPES:
+
+1) FIXED-SIZE WINDOW
+The size of the window remains constant.
+
+2)VARIABLE-SIZE WINDOW
+The size of the window changes based on some condition
+
+ USE IN STRING PROBLEMS:
+
+1) Longest Substring Without Repeating Characters:
+Use a variable-size sliding window to check substrings with unique characters.
+Update the maximum length found.
+
+2) Check for Permutation in a String
+Use a fixed-size window to match character frequencies.
+
+3) Minimum Window Substring
+Use a variable window to find the smallest substring that contains all required characters.
