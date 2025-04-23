@@ -1,0 +1,23 @@
+9-> Find the longest common prefix among a list of strings.
+
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+string commonPrefix(vector<string>s,int n){
+    if(s.empty()){
+        return " ";
+    }
+    string prefix=s[0];
+    for(int i=1;i<n;i++){
+        while(s[i].find(prefix)!=0){
+            prefix=prefix.substr(0,prefix.length()-1);
+        }
+    }
+    return prefix;
+}
+int main(){
+    vector<string>s={"flower", "flow", "flight"};
+    int n=s.size();
+    cout<<commonPrefix(s,n);
+}
