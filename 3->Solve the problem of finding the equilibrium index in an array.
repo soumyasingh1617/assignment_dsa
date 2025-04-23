@@ -1,0 +1,22 @@
+3->Solve the problem of finding the equilibrium index in an array.
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>arr={-7,1,5,2,-4,3,0};
+    int n=arr.size();
+    int totalsum=0;
+    for(int i=0;i<n;i++){
+        totalsum+=arr[i];
+    }
+    int leftsum=0;
+    for(int i=0;i<n;i++){
+        int rightsum=totalsum-leftsum-arr[i];
+        if(leftsum==rightsum){
+            cout<<"Index is: "<<i;
+             break;
+        }
+        leftsum+=arr[i];
+    }
+}
