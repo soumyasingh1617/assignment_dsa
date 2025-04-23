@@ -1,0 +1,31 @@
+11->  Find two numbers in a sorted array that add up to a target.
+
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> findtwoSum(vector<int> arr,int target){
+    int left=0;
+    int right=arr.size()-1;
+    while(left<right){
+        int sum=arr[left]+arr[right];
+        if(sum==target){
+            return {left,right};
+        }
+        else if(sum<target){
+            left++;
+        }
+        else{
+            right--;
+        }
+    }
+    return{-1,-1};
+}
+int main(){
+    vector<int> arr={2,7,11,15};
+    int target=18;
+    vector<int> result=findtwoSum(arr,target);
+    if(!result.empty()){
+    cout<<"Indices are: "<<result[0]<<" "<<result[1]<<endl;
+    cout<<"Element present on indices are: "<<arr[result[0]]<<" "<<arr[result[1]]<<endl;
+}
+}
